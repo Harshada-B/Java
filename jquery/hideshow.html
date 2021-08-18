@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<script>
+        $(document).ready(function(){
+        $("#hide").click(function(){
+            $(".show").hide();
+            });
+            $("#show").click(function(){
+            $(".show").show();
+            });
+        });
+    </script>-->
+    <script>//2
+         $(document).ready(function(){
+            $("button").click(function(){
+               $("#p1").fadeIn();
+               $("#p2").fadeIn("slow");
+            });
+         });
+    </script>
+    </head>
+    <body>
+        <!--<p class="show">click me once</p>
+        <button id="hide">Hide me</button>
+        <button id="show">Show me</button>--->
+        <h1 style="text-align: center;">fade me</h1>
+       <div id="p1" style="width:100px;height:80px;display:none;background-color:purple;">simple fade</div><br>
+       <p id="p2" style="font-size: 20px;">this is my paragraph</p>
+        <button>click to fade</button>
+    </body>
+</html>

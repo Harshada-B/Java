@@ -1,0 +1,25 @@
+<!----this selector is used for searching purpose--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#show').click(function(){
+                $("p:cantains('harshada')").fadeIn(3000);
+            });
+        });
+    </script>
+    <style type="text/css">
+    p{
+        display:none
+    }
+    </style>
+</head>
+<body>
+    <input type="submit" value="show" id="show"/>
+    <p>101 yash harshada 20%</p>
+    <p>102 amdocs shreya 80%</p>
+    <p>103 infosys prathmesh 100%</p>
+</body>
+</html>
