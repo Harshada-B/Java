@@ -1,0 +1,43 @@
+1) Show the structure of the employees table. Create a query to display the lastName, 
+employeenumber, extension, officecode, reporting manager id and job title for each employee with 
+employee number appearing first. 
+----->SELECT employeeNumber,lastname,extension,officeCode,reportsTo,jobTitle FROM employee;
+
+2)Create unique JobTitles from employees table.
+----->SELECT UNIQUE jobTitle FROM employee;
+
+Q3: ReCreate the query for question 1 and column name must be appeared as Employee#, Extn, 
+Office_Code, Manager ID and Job Title for each employee and redisplay the data.
+----->SELECT employeeNumber AS Employee,lastName,firstname,extension AS EXTN,officeCode AS Office_Code,reportsTo AS Manager_ID,jobtitle FROM employee;
+
+Q4)display data firstname, lastname concated seperated by comma?
+------>SELECT CONCAT_WS(',',lastname,firstname)AS EmployeeName FROM employee;
+
+Q5)Create a query to display the Emp# EmplyeeName, Mgr # and ManagerName . In this query all 
+the employees must be displayed with reporting manager
+---->SELECT CONCAT(lastName,",",firstName) AS employeeName,manager_name FROM employee e,manager m WHERE e.employeeNumber=m.employeeNumber;
+
+Q6) Create a query to display the customer name, Contact, and Credit Limit of all those employees 
+who falls in credit limit of between 85100 to 100600
+---->SELECT c_name,CONCAT(contactfirstname,",",contactlastname)AS contact_name,creditlimit FROM customer WHERE creditlimit BETWEEN 85100 AND 100600;
+
+Q7: Create a query to display firstname, lastname, office code of employees who are either in office 
+code 4 or 6 and data should be displayed alphabetically based on firstname.
+---->SELECT firstname,lastname,officecode FROM employee WHERE officecode IN(4,6);
+
+Q8: display the firstname, last name of employees who are not reporting to any manager.
+---->SELECT firstname,lastname,managername FROM employee WHERE managername IS NULL;
+
+Q9: Display contactfirstname, contactlastname state and city of customers who live in some state, 
+sort the data in descending order of state and city.
+---->
+
+Q10): Display contactlastname of customers where there is a at second position in name.
+--->SELECT contactfirstname FROM customer WHERE contactfirstname LIKE '_a%';
+
+Q11: Display the contactlastname of customers where there is either “g” or “o” available in name
+---->SELECT contactlastname FROM customer WHERE contactlastname LIKE '%o%'OR'%g%';
+
+Q12: Display firstname, lastname, officecode and jobtitle of employees whose jobtitle is Sales Rep or 
+Sales Manager and whose office code is not equal to 4, 6 and 7
+------>SELECT firstname,lastname,officecode,jobtitle FROM employee WHERE jobtitle IN('salesresp','salesmanager');

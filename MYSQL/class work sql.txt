@@ -1,0 +1,16 @@
+-- create view empview as select name,address from employee where id>103;
+
+-- select * from empview;
+
+-- select id as empid,name as empname from employee;//------alais 
+
+-- select employee.id,department.dept_name from department inner join employee on department.id=employee.id;//----inner join
+
+SELECT NAME FROM employee WHERE id =ANY(SELECT id FROM employee WHERE address="pune" OR address="dheu");//----ANY
+
+-- lock table employee read;
+-- select * from employee;
+-- unlock table employee read;
+-- select * from employee;
+SELECT NAME,slary,designation,address FROM employee WHERE salary =(SELECT MIN(salary) FROM employee);
+-- select * from employee where salary=40000;

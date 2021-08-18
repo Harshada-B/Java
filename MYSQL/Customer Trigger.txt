@@ -1,0 +1,11 @@
+DELIMITER $$
+
+CREATE 
+    /*[DEFINER = { user | CURRENT_USER }]*/
+    TRIGGER `employeedatabase`.`Cust_Trigger` BEFORE INSERT
+    ON `employeedatabase`.`customer`
+    FOR EACH ROW BEGIN
+	IF new.p_price<0 THEN SET new.p_price=0;
+    END IF;
+	END $$;
+DELIMITER ;
